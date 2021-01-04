@@ -131,4 +131,3 @@ function algoM02(name,dob,user_count){
 }
 
 
-console.log(algoM02("koushik","19-03-2001",143));
