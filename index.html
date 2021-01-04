@@ -1,41 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Strong Password Generator</title>
-	<script src="algoK81.js"></script>
+    <title>Password Generator</title>
+    <script src="algoK81.js"></script>
 	<script src="algoK82.js"></script>
+	<script src="algoK91.js"></script>
+	<script src="algoK92.js"></script>
 	<script src="algoM01.js"></script>
 	<script src="algoM02.js"></script>
 	<script src="algoP21.js"></script>
 	<script src="algoQ51.js"></script>
 	<script src="algoQ91.js"></script>
 	<script src="algoQ92.js"></script>
+	<script src="algos.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        .form-style-8{
+	        width: 500px;
+	        padding: 30px;
+	        margin: 10px auto;
+
+        }
+        .form-style-8 input[type="text"],
+        .form-style-8 input[type="date"]
+        {
+	        box-sizing: border-box;
+	        outline: none;
+	        display: block;
+			color: white;
+	        width: 90%;
+	        padding: 7px;
+	        border: none;
+	        border-bottom: 2px solid white;
+	        background: transparent;
+	        margin-bottom: 10px;
+	        font: 16px;
+	        height: 45px;
+        }
+        .form-style-8 input[type="button"],
+		button, 
+        .form-style-8 input[type="submit"]{
+	        background-color: rgba(163, 154, 247,0.5);
+	        border: 1px solid rgba(163, 154, 247,0.5);
+	        display: inline-block;
+	        cursor: pointer;
+	        color: white;
+	        font-size: 14px;
+	        padding: 8px 18px;
+	        text-decoration: none;
+        }
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  			color:white;
+		}
+		input[type="date"]::-webkit-calendar-picker-indicator {
+  			cursor: pointer;
+  			border-radius: 4px;
+  			margin-right: 2px;
+  			opacity: 1;
+  			filter: invert(1);
+		}
+    </style>
 </head>
-<body>
-	<p>INPUT</p>
-	<p>Name: Tarang Garlapally</p>
-	<p>DoB: 10-02-2021</p>
-	<p>User Count: 122</p>
-	<br />
-	<p id = "text1"></p>
-	<p id = "text2"></p>
-	<p id = "text3"></p>
-	<p id = "text4"></p>
-	<p id = "text5"></p>
-	<p id = "text6"></p>
-	<p id = "text7"></p>
-	<p id = "text8"></p>
-<script>
-	algoK81("Tarang Garlapally", '10-02-2000',122);
-	document.getElementById("text1").innerHTML = "<b>algoK81: </b>" + algoK81("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text2").innerHTML = "<b>algoK82: </b>" + algoK82("Tarang Garlapally", '10-02-2021',122);
+<body style="background-image: url('giphy.gif');background-repeat: no-repeat;background-size: cover;">
+	<h1 class="text-center" style="color:white;margin-top: 30px;">Strong Password Generator</h1>
+	<h4 class="text-center" style="color:white;margin-top: 30px;">Helps you generate a secure password out of the information provided by "YOU"!</h4>
+	<div style="width: 650px; height: 400px;background-color: rgba(121, 124, 255,0.1); margin :auto; margin-top: 50px;" class="row no-gutters">
+		<div class="col-12">
+			<div class="form-style-8">
+				<form class="text-center" autocomplete="off" action="javascript:;" onsubmit="return validate()">
+					<input type="text" name="name" id="name" placeholder="Enter Name" required/><br>
+					<input type="date" name="dob" id="dob" placeholder="Enter Date of Birth(dd-mm-yyyy)" required/><br>
+					<input type="submit" value="Generate"/>
+				</form>
+			</div>
+			<h4 class="text-center" id="done" style="color: white;"  hidden>Your password has been generated.</h4>
+			<div class="text-center" style="margin-top: 15px;"> <button onclick="copyToClipboard()" id="copy" hidden>Copy to clipboard</button></div>
+		</div>
+		
+	</div>
 	
-	document.getElementById("text4").innerHTML = "<b>algoQ91: </b>" + algoQ91("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text5").innerHTML = "<b>algoQ92: </b>" + algoQ92("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text3").innerHTML = "<b>algoQ51: </b>" + algoQ51("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text6").innerHTML = "<b>algoP21: </b>" + algoP21("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text7").innerHTML = "<b>algoM01: </b>" + algoM01("Tarang Garlapally", '10-02-2021',122);
-	document.getElementById("text8").innerHTML = "<b>algoM02: </b>" + algoM02("Tarang Garlapally", '10-02-2021',122);
-</script>
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>

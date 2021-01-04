@@ -1,3 +1,22 @@
+function NumToSingle(num){
+    /*
+        Function Description:
+        Has one parameter: num:int
+        returns single digit num
+    */
+    var sum = num;
+    while(sum/10>=1){
+        sum = 0;
+        while(num>0){
+            sum += num%10;
+            num = Math.floor(num/10);
+        }
+        num = sum;
+    }
+    return sum.toString();
+}
+
+
 function algoQ91(name,dob,user_count){
  /*
     Function Description:
@@ -40,11 +59,11 @@ function algoQ91(name,dob,user_count){
     password += (month_dob[2].toLowerCase())
 
     //Get 1st special symbol using date of dob
-    let spec1 = String.fromCharCode(parseInt(dob.split("-")[0])+30)
+    let spec1 = String.fromCharCode((NumToSingle(parseInt(dob.split("-")[0]))%16)+32)
 
     //Get 2nd special symbol using month number of dob
-    let spec2 = String.fromCharCode(parseInt(dob.split("-")[1])+30)
-
+    let spec2 = String.fromCharCode((NumToSingle(parseInt(dob.split("-")[1]))%16)+32)
+    
     //Add both specials to password
     password += spec1+spec2
 

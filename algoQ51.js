@@ -43,13 +43,13 @@ password += String.fromCharCode(n+Math.floor((Math.random() * 10) + 1)).toUpperC
     //Get special number by adding year + n + last+twodigits+user
     let spec3 = (parseInt(year)+ parseInt(last_twodigits_user)).toString()
 
+
     //if spec3 is more then 2 characters then add only the last 2 chars
     if (spec3.length > 3)
         spec3 = spec3.substring(1,3)
     
     //Add spec3 to password
     password += spec3
-
     //return password
     return password
 
