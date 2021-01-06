@@ -20,7 +20,7 @@
 		var dob = document.getElementById("dob").value;
 		
 		if(name){
-			var algo_array = [algoK81, algoK82, algoK91, algoK92, algoM01, algoM02, algoP21, algoQ51, algoQ91, algoQ92];
+			var algo_array = [algoK81, algoK82, algoK91, algoK92, algoM01, algoM02, algoP21, algoP22, algoQ51, algoQ52, algoQ91, algoQ92];
 			var algo = algo_array[Math.floor(Math.random() * algo_array.length)]; 
 
 			dob = dob.split("-");

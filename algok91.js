@@ -17,6 +17,7 @@ function NumToSingle(num){
 }
 
 function algoK91(name,dob,user_count){
+
  /*
     Function Description:
     Has two parameters: name:string and dob:string and user_count:int
