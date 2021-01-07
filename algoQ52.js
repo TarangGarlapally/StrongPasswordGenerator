@@ -28,6 +28,7 @@ function algoQ52(name,dob,user_count){
     users=user_count.toString()
     last_twodigits_user=users.substring(users.length-2,users.length)
 
+    year = parseInt(dob.split("-")[2])
     //Get special number by adding year + n + last+twodigits+user
     let spec3 = (parseInt(year)* parseInt(last_twodigits_user)).toString()
  
@@ -47,10 +48,10 @@ password += String.fromCharCode(n+Math.floor((Math.random() * 10) + 1)).toUpperC
 password += String.fromCharCode(n+Math.floor((Math.random() * 10) + 1)).toUpperCase()
     
     //Adding random elements of year of birth 1 time
-    year = parseInt(dob.split("-")[2])
+   
 
-    password +=year[Math.floor((Math.random() * 4) )]
-    
+    password +=dob.split("-")[2][Math.floor((Math.random() * 4) )]
+
   
     //adding two random characters to password
     password +=specialchar[Math.floor((Math.random() * 5) )]

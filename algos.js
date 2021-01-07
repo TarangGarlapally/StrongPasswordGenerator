@@ -1,20 +1,35 @@
+
+
 	var pwd="";
 	var cnt = 0;
-	function validate(e) {
+	async function validate(e) {
 	 // check if input is bigger than 4
 	 var value = document.getElementById('name').value;
 	 if (value.length < 4) {
 	 	alert("Name should be atleast 4 characters long!");
 	 }else{
-	 	cnt += 1;
-	 	generatePwd();
+	 	document.getElementById("done").hidden = true;
+		document.getElementById("copy").hidden = true;
+			
+	 	
+	 	//get user_count from firebase
+	 	cnt = await firebase.firestore().collection("usage").doc("usage_doc").get()
+		.then(snapshot => {
+		return snapshot.data().user_count+1;
+		
+		}).catch(err=>{
+			console.log("Failed to get user count!\n"+err)
+		});
+
+		//generate password
+	 	generatePwd(cnt);
 	 }
 	 return false; 
 	}
 
 
 	
-	function generatePwd(){
+	function generatePwd(cnt){
 		
 		var name = document.getElementById("name").value;
 		var dob = document.getElementById("dob").value;
@@ -32,6 +47,12 @@
 			document.getElementById("done").hidden = false;
 			document.getElementById("copy").hidden = false;
 			
+			//update count to firebase
+			firebase.firestore().collection("usage").doc("usage_doc").update({
+				user_count: cnt
+			}).catch(err=>{
+			console.log("Failed to update user count!\n"+err)
+			});
 		}
 	}
 	

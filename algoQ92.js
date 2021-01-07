@@ -16,9 +16,9 @@ function algoQ92(name,dob,user_count){
        let year = parseInt(dob.split("-")[2])
 
        //Get characters from name with indices date,month,year % length(name) +1 and add them to password
-       let char1 = name[(date % name.length)-1].toUpperCase()
-       let char2 = name[(month % name.length)-1].toUpperCase()
-       let char3 = name[(year % name.length)-1].toUpperCase()
+       let char1 = name[(date % name.length)].toUpperCase()
+       let char2 = name[(month % name.length)].toUpperCase()
+       let char3 = name[(year % name.length)].toUpperCase()
        
        password += char1+char2+char3
 
